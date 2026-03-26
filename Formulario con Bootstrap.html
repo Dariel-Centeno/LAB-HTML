@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario de Registro de Usuario</title>
+
+<!-- ✅ Bootstrap 3 CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+function validarPassword(){
+let pass=document.getElementById("password").value;
+let confirm=document.getElementById("confirmar").value;
+
+if(pass !== confirm){
+alert("Las contraseñas no coinciden");
+return false;
+}
+return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 class="text-center">Formulario de Registro de Usuario</h2>
+
+<form onsubmit="return validarPassword()">
+
+<div class="row">
+
+<!-- DATOS PERSONALES -->
+<div class="col-sm-6">
+
+<h3>Datos Personales</h3>
+
+<div class="form-group">
+<label>Nombre completo</label>
+<input type="text" class="form-control" required>
+</div>
+
+<div class="form-group">
+<label>Correo electrónico</label>
+<div class="input-group">
+<span class="input-group-addon">
+<span class="glyphicon glyphicon-envelope"></span>
+</span>
+<input type="email" class="form-control" required>
+</div>
+</div>
+
+<div class="form-group">
+<label>Teléfono</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Fecha de nacimiento</label>
+<input type="date" class="form-control">
+</div>
+
+</div>
+
+<!-- DATOS DE CUENTA -->
+<div class="col-sm-6">
+
+<h3>Datos de Cuenta</h3>
+
+<div class="form-group">
+<label>Nombre de usuario</label>
+<div class="input-group">
+<span class="input-group-addon">
+<span class="glyphicon glyphicon-user"></span>
+</span>
+<input type="text" class="form-control" required>
+</div>
+</div>
+
+<div class="form-group">
+<label>Contraseña</label>
+<div class="input-group">
+<span class="input-group-addon">
+<span class="glyphicon glyphicon-lock"></span>
+</span>
+<input type="password" id="password" class="form-control">
+</div>
+</div>
+
+<div class="form-group">
+<label>Confirmar contraseña</label>
+<input type="password" id="confirmar" class="form-control">
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<!-- PREFERENCIAS -->
+<h3>Preferencias</h3>
+
+<div class="row">
+
+<div class="col-sm-4">
+
+<div class="form-group">
+<label>Género</label><br>
+
+<label class="radio-inline">
+<input type="radio" name="genero"> Masculino
+</label>
+
+<label class="radio-inline">
+<input type="radio" name="genero"> Femenino
+</label>
+
+</div>
+
+</div>
+
+<div class="col-sm-4">
+
+<div class="form-group">
+<label>Suscripción</label><br>
+
+<label class="checkbox-inline">
+<input type="checkbox"> Recibir boletín
+</label>
+
+</div>
+
+</div>
+
+<div class="col-sm-4">
+
+<div class="form-group">
+<label>País</label>
+<select class="form-control">
+<option>Puerto Rico</option>
+<option>Estados Unidos</option>
+<option>México</option>
+<option>España</option>
+</select>
+</div>
+
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Comentarios</label>
+<textarea class="form-control" rows="4"></textarea>
+</div>
+
+<!-- BOTÓN -->
+<button type="submit" class="btn btn-primary btn-block">
+Registrarse
+</button>
+
+</form>
+
+<br>
+
+<!-- ALERTA -->
+<div class="alert alert-info">
+Complete todos los campos obligatorios antes de enviar.
+</div>
+
+</div>
+
+</body>
+</html>
